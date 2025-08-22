@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Örnek Sayfa</title>
+    <style>
+        body {
+            background-color: #f2f4f7;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+        }
+
+       .logo {
+    position: absolute;       /* Logo, sayfada belirli bir noktaya yerleşecek */
+    top: 145px;               /* Üstten 120px mesafede konumlandır */
+    left: 25%;                /* Sol kenardan %50 uzaklıkta */
+    transform: translateX(-50%); /* Yatayda tam merkezlemek için */
+    width: 100px;             /* Logonun genişliği */
+    height: auto;             /* Yüksekliği otomatik olarak orantılı yap */
+}
+.logo img {
+    width: 300%;              /* Logonun %100 genişliği, container'a göre */
+    height: auto;             /* Yüksekliği oranlı tutmak için otomatik */
+}
+
+        .slogan {
+    margin-left: 28%;
+    font-size: 25px;
+    white-space: nowrap;
+    margin-top: -25px;
+        }
+
+        .slogan p {
+    margin: 0; /* Varsayılan margin değerini sıfırlıyoruz */
+    padding: 0; /* Varsayılan padding değerini sıfırlıyoruz */
+    line-height: 1; /* Satır aralığını daraltıyoruz */
+}
+
+
+        .login-box {
+            background-color: white;
+            padding: 4px 10px; 
+            width: 300px;
+            height: 260px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            margin: 0 auto;
+            position: absolute;
+            top: 120px;
+            left: 54%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 2px;
+            
+        }
+
+.box-box {
+    background-color: rgb(255, 255, 255);
+    padding: 4px 10px; 
+    width: 99%;
+    height: 210px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin: 0 auto;
+    position: absolute;
+    top: 600px;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+}
+
+.box-text {
+    font-size: 10px;
+    margin-top: -60px;
+    text-align: center;
+    width: 100%; /* Tüm genişliği kaplar */
+    position: absolute; /* Mutlak konumlandırma */
+    left: 41%; /* Sol kenarı %50'ye getirir */
+    transform: translateX(-50%); 
+    white-space: nowrap;
+    color:gray;
+
+}
+
+        .login-box input {
+            width: 90%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin: 5px 0; 
+            font-size: 12px;
+            z-index: 11; /* Z-index ekledik */
+        }
+
+        .line {
+            width: 95%;  
+            height: 0.5px;
+            background-color: rgb(169, 168, 168);
+            margin: 10px 0; 
+            z-index: 9; /* Z-index ile alt seviyeye yerleştiriyoruz */
+        }
+
+        .login-box button {
+            width: 100%;
+            padding: 11px;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 14px;
+            cursor: pointer;
+            z-index: 11; /* Z-index ekleyerek ön plana alıyoruz */
+        }
+
+        .create-account-btn {
+            width: 88%;
+            padding: 10px;
+            background-color: #42b72a;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .login-btn {
+            width: 88%;
+            padding: 10px;
+            background-color: #0866ff;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        .forgot-password { 
+            text-align: center;
+            font-size: 12px;
+        }
+
+        .forgot-password a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        .create-account-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .footer p {
+            font-size: 12px;
+        }
+
+        .footer select {
+            margin-top: 10px;
+            padding: 5px;
+            font-size: 14px;
+        }
+
+        .footer-links {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .footer-links a {
+            color: #007BFF;
+            text-decoration: none;
+            font-size: 12px;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-bottom {
+            margin-top: 40px;
+            font-size: 12px;
+            color: #666;
+        }
+
+        .account-table {
+            width: 100%;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        .account-table td {
+            padding: 11px;
+            text-align: center;
+        }
+
+        .account-table button {
+            width: 140px;
+        }
+
+        .yazi {
+            text-align: center;
+            font-size: 12px;
+            width: 320px;
+            height: 580px;
+            margin: 0 auto;
+            position: absolute;
+            top: 120px;
+            left: 54%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Logo ve Slogan -->
+        <div class="logo">
+            <img src="https://static.xx.fbcdn.net/rsrc.php/y1/r/4lCu2zih0ca.svg" alt="Logo">
+            <div class="slogan">
+            <p>Facebook tanıdıklarınla iletişim kurmanı </p>
+            <p>ve hayatında olup bitenleri paylaşmanı </p>
+            <p>sağlar.</p>
+        </div>
+        </div>
+
+        <div class="login-box"></div>
+        <div class="login-box">
+            <input type="text" placeholder="E-posta veya Telefon Numarası">
+            <input type="password" placeholder="Şifre">
+            <button class="login-btn">Giriş Yap</button>
+
+            <div class="forgot-password">
+                <a href="#">Şifreni mi Unuttun?</a>
+            </div>
+            <div class="line"></div>
+            <button class="create-account-btn">Yeni Hesap Oluştur</button>
+        </div>
+        <p class="yazi">Ünlü biri, marka veya işletme için Sayfa oluştur.</p>
+    </div>
+<div class="box-box">
+    <p class="box-text">    Türkçe
+    English (UK)
+    Kurdî (Kurmancî)
+    العربية
+    Zaza
+    Deutsch
+    Русский
+    Français (France)
+    فارسی
+    Español
+    Português (Brasil)<br><br>
+     <span style="padding-left: 115px;">
+      Kaydol Giriş Yap Messenger Facebook Lite Video Meta Pay Meta Mağazası Meta Quest Ray-Ban Meta Meta AI Meta AI daha fazla içerik Instagram<br><br>
+    </span>
+    <span style="padding-left: 108px;">
+      ThreadsOy Kullanma Bilgi Merkezi Gizlilik İlkesi Gizlilik Merkezi Hakkımızda Reklam Oluştur Sayfa Oluştur Geliştiriciler Kariyer Olanakları Çerezler<br><br>
+      </span>
+         <span style="margin-left: -114px; display: inline-block;">
+      Ad Choices Koşullar Yardım Kişi Yükleme ve Hesabı Olmayan Kişiler Ayarlar Hareketler dökümü <br><br><br>
+      </span>
+      
+  </p>
+</div>
+</body>
+</html>
